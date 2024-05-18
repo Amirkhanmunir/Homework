@@ -1,0 +1,36 @@
+package com.example.greetingcard;
+
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import android.widget.TextView;
+import android.widget.LinearLayout;
+import android.view.Gravity;
+import android.view.ViewGroup.LayoutParams;
+import android.graphics.Color;
+
+public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // Create a LinearLayout
+        LinearLayout layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        layout.setGravity(Gravity.CENTER);
+        layout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+        layout.setBackgroundColor(Color.WHITE);
+
+        // Create a TextView
+        TextView textView = new TextView(this);
+        textView.setText("Hi, my name is Android!");
+        textView.setPadding(48, 48, 48, 48); // padding in pixels
+        textView.setBackgroundColor(Color.CYAN);
+        textView.setTextSize(24); // text size in SP
+
+        // Add the TextView to the layout
+        layout.addView(textView);
+
+        // Set the layout as the content view
+        setContentView(layout);
+    }
+}
